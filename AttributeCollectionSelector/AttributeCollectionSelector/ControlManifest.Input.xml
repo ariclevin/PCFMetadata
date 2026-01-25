@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="mdt" constructor="AttributeCollectionSelector" version="1.0.5" display-name-key="Attribute Collection Selector" description-key="A dropdown that allows the selection of multiple entity attributes" control-type="virtual">
+    <property name="Attribute" display-name-key="Attribute" description-key="Selected Attributes" of-type-group="TextTypes" usage="bound" required="true" />
+
+    <property name="EntityName" display-name-key="Entity Name" description-key="The logical name of the Entity we are selecting the attributes of." of-type="SingleLine.Text" usage="input" required="true" />  
+    
+<type-group name="TextTypes">
+       <type>SingleLine.Text</type>
+       <type>Multiple</type>
+       <type>SingleLine.TextArea</type>
+</type-group>
+
+    <resources>
+      <code path="index.ts" order="1"/>
+      <platform-library name="React" version="16.14.0" />
+      <platform-library name="Fluent" version="9.46.2" />
+    </resources>
+    <feature-usage>
+      <uses-feature name="Utility" required="true" />
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+  </control>
+</manifest>

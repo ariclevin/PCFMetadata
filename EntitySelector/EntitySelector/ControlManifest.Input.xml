@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="mdt" constructor="EntitySelector" version="2.1.5" display-name-key="Entity Selector" description-key="A dropdown box to select an Entity" control-type="virtual">
+    <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
+    <property name="logicalName" display-name-key="Entity Logical / Schema Name" description-key="The logical / schema name of the Entity" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="displayName" display-name-key="Entity Display Name" description-key="The display name of the Entity" of-type="SingleLine.Text" usage="bound" required="false" />
+
+<property name="activitiesOnly" display-name-key="Activities Only" description-key="Restricts the list to just Activity Entities" of-type="Enum" usage="input" required="true">
+      <value name="No" display-name-key="All Entities" description-key="All Entities" default="true">All</value>
+      <value name="Yes" display-name-key="Activities only" description-key="Activity Entities" >Activity Entities Only</value>     
+</property>
+
+    <property name="supportsActivities" display-name-key="Supports Activities" description-key="Show only entities that support activity child records (if this field contains text)" of-type="Enum" usage="input" required="true">
+      <value name="No" display-name-key="All Entities" description-key="All Entities" default="true">All</value>
+      <value name="Yes" display-name-key="Only Entities that allow Activities" description-key="Entities with Activities" >Entities that allow Activities</value>
+</property>
+
+    <resources>
+      <code path="index.ts" order="1"/>
+      <platform-library name="React" version="16.14.0" />
+      <platform-library name="Fluent" version="9.46.2" />
+    </resources>
+    
+  </control>
+</manifest>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="mdt" constructor="EntityCollectionSelector" version="1.0.3" display-name-key="Entity Collection Selector" description-key="A dropdown Control for selecting Multiple Entities" control-type="virtual">
+    <property name="EntityNames" display-name-key="Entity Names" description-key="The names of the Entities that are selected" of-type-group="TextTypes"  usage="bound" required="true" />  
+    <property name="activitiesOnly" display-name-key="Activities Only" description-key="Restricts the list to just Activity Entities" of-type="Enum" usage="input" required="true">
+      <value name="No" display-name-key="All Entities" description-key="All Entities" default="true">All</value>
+      <value name="Yes" display-name-key="Activities only" description-key="Activity Entities" >Activity Entities Only</value>     
+    </property>
+
+    <property name="supportsActivities" display-name-key="Supports Activities" description-key="Show only entities that support activity child records (if this field contains text)" of-type="Enum" usage="input" required="true">
+      <value name="No" display-name-key="All Entities" description-key="All Entities" default="true">All</value>
+      <value name="Yes" display-name-key="Only Entities that allow Activities" description-key="Entities with Activities" >Entities that allow Activities</value>
+  </property>
+
+  <type-group name="TextTypes">
+        <type>SingleLine.Text</type>
+        <type>Multiple</type>
+        <type>SingleLine.TextArea</type>
+  </type-group>
+
+    <resources>
+      <code path="index.ts" order="1"/>
+      <platform-library name="React" version="16.14.0" />
+      <platform-library name="Fluent" version="9.46.2" />
+    </resources>
+    <feature-usage>  
+      <uses-feature name="Utility" required="true" />
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+  </control>
+</manifest>
