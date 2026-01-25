@@ -7,6 +7,9 @@ These controls were built to simplify the need to use custom scripting to access
 
 You can download these controls directly from the repo in both Unmanaged and Managed format, or download the source code and modify or use the controls as needed.
 
+![Managed Solution](Resources\Solutions\MDTMetadataComponents_managed.zip)
+![Unmanaged Solution](Resources\Solutions\MDTMetadataComponents.zip)
+
 <h3> Available controls</h3>
 
 **Entity Selector**
@@ -17,6 +20,7 @@ The control allows you to store the display name of the entity as well in an alt
 Properties:
 Entity - *Required* Bound singleline text field  
 Display Name - *Optional* Bound singleline text field.
+
 
 ![Entity Selector](Resources/Assets/EntitySelector.png)
 
