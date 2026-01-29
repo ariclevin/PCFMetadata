@@ -57,7 +57,7 @@ export const RelatedAttributeSelectorComponent: React.FC<IRelatedAttributeSelect
                 }
 
                 const response = await fetch(
-                    `${baseUrl}/api/data/v9.1/EntityDefinitions(LogicalName='${formEntity}')/Attributes/Microsoft.Dynamics.CRM.LookupAttributeMetadata?$select=LogicalName,DisplayName,Targets`,
+                    `${baseUrl}/api/data/v9.1/EntityDefinitions(LogicalName='${queryEntity}')/Attributes/Microsoft.Dynamics.CRM.LookupAttributeMetadata?$select=LogicalName,DisplayName,Targets`,
                     {
                         method: 'GET',
                         headers: {
@@ -76,15 +76,20 @@ export const RelatedAttributeSelectorComponent: React.FC<IRelatedAttributeSelect
                 const result = await response.json();
                 const lookupOptions: ILookup[] = [];
 
+                const targetEntity = formEntity.toLowerCase();
+
                 if (result.value && Array.isArray(result.value)) {
                     result.value.forEach((lookup: any) => {
                         if (lookup.DisplayName?.UserLocalizedLabel?.Label) {
                             // Filter to only lookups that target the queryEntity
-                            if (lookup.Targets && Array.isArray(lookup.Targets) && lookup.Targets.includes(queryEntity)) {
-                                lookupOptions.push({
-                                    key: lookup.LogicalName,
-                                    text: lookup.DisplayName.UserLocalizedLabel.Label
-                                });
+                            if (lookup.Targets && Array.isArray(lookup.Targets)) {
+                                const targets = lookup.Targets.map((target: string) => target.toLowerCase());
+                                if (targets.includes(targetEntity)) {
+                                    lookupOptions.push({
+                                        key: lookup.LogicalName,
+                                        text: lookup.DisplayName.UserLocalizedLabel.Label
+                                    });
+                                }
                             }
                         }
                     });

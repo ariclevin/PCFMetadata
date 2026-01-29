@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="mdt" constructor="RelatedAttributeSelector" version="1.0.3" display-name-key="Related Attribute Selector" description-key="A control to allow you to choose between multiple lookup attributes that connect to a particular entity" control-type="virtual">
+  <control namespace="mdt" constructor="RelatedAttributeSelector" version="1.0.4" display-name-key="Related Attribute Selector" description-key="A control to allow you to choose between multiple lookup attributes that connect to a particular entity" control-type="virtual">
     <property name="Attribute" display-name-key="Lookup" description-key="The name of the Lookup field that will be used." of-type="SingleLine.Text" usage="bound" required="true" />
      <property name="FormEntity" display-name-key="Form Entity" description-key="The name of the Entity this query will be displayed on" of-type="SingleLine.Text" usage="bound" required="true" />
      <property name="QueryEntity" display-name-key="Query Entity" description-key="The name of the Entity being queried" of-type="SingleLine.Text" usage="bound" required="true" />
