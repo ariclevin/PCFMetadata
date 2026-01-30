@@ -108,7 +108,19 @@ Attribute - *Required* Bound singleline text field
 FormEntity -  *Required* Singleline Bound text field 
 QueryEntity -  *Required* Singleline Bound text field 
 
-Note: The source of these controls were originally taken from the following repo:
+![Related Attribute Selector](Resources/Assets/RelatedAttributeSelector.png)
+
+**Model driven app Selector**
+
+A fluent ui dropdown control that allows the selection of a model driven app from the AppModules table in dataverse. The control stores the appid in the in the control field and has the ability to store the app name in a separate control..  
+
+Properties:
+AppId - *Required* Bound singleline text field and will store the App Id. 
+AppName - *Optional* Bound singleline text field and will store the App Name.
+
+![Model Driven App Selector](Resources/Assets/ModelDrivenAppSelector.png)
+
+Note: The source of some of these controls were originally taken from the following repo:
 https://github.com/bthompson-365/PCF-Metadata
 
 The controls have been heavily modified and converted to virtual controls using the latest React and Fluent UI version 9.
@@ -116,7 +128,6 @@ The original Select Action and Select Relationship control have been ommitted, b
 Additional controls will be added to this repo to perform other metadata operations, or other operations that are not available directly via Model Driven Apps.
 
 Upcoming Controls:
-App Selector: Provides the ability to select a Model Driven App by Name and Id
 Custom API Selector: Provides the ability to select a Custom API
 
 If there are additional controls that you are interested in, please let me know.
